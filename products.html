@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - EcoPowerX</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/products.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="EcoPowerX">
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html" class="active">Products</a></li>
+                <li><a href="trade.html">Trade Energy</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="nav-icons">
+                <a href="#search"><i class="fas fa-search"></i></a>
+                <a href="#cart"><i class="fas fa-shopping-cart"></i><span class="cart-count">0</span></a>
+                <a href="#account"><i class="fas fa-user"></i></a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>Power Your Home with the Best Solar Technology!</h1>
+                <p>Buy high-efficiency solar panels & trade excess energy seamlessly.</p>
+                <div class="hero-buttons">
+                    <button class="btn primary">Shop Solar Products</button>
+                    <button class="btn secondary">Sell Your Surplus Energy</button>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="images/solar-dashboard.jpg" alt="Solar Dashboard">
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products-section">
+        <div class="container">
+            <!-- Filters Sidebar -->
+            <aside class="filters">
+                <h3>Filters</h3>
+                <div class="filter-group">
+                    <h4>Price Range</h4>
+                    <div class="price-slider">
+                        <input type="range" id="priceRange" min="0" max="10000" value="0">
+                        <div class="price-values">
+                            <span id="minPrice">$0</span>
+                            <span id="maxPrice">$10,000</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="filter-group">
+                    <h4>Product Type</h4>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" value="solar-panels"> Solar Panels</label>
+                        <label><input type="checkbox" value="batteries"> Batteries</label>
+                        <label><input type="checkbox" value="inverters"> Inverters</label>
+                        <label><input type="checkbox" value="accessories"> Accessories</label>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Products Grid -->
+            <div class="products-grid" id="productsGrid">
+                <!-- Products will be dynamically inserted here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Company Info</h3>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Press</a></li>
+                    </ul>
+                </div>
+                <!-- Add more footer sections as needed -->
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/products.js"></script>
+</body>
+</html>
