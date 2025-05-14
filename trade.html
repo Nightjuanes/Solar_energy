@@ -6,230 +6,129 @@
     <title>Trade Energy - EcoPowerX</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/trade.css">
+    <link rel="stylesheet" href="css/grid.css">
+    <!-- External Icon Library -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <!-- Navigation (Same as index.html) -->
+    <!-- Main Navigation Component -->
     <nav class="navbar">
-        <!-- ... navigation content ... -->
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="EcoPowerX">
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="trade.html" class="active">Trade Energy</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="nav-icons">
+                <a href="#search"><i class="fas fa-search"></i></a>
+                <a href="#cart"><i class="fas fa-shopping-cart"></i><span class="cart-count">0</span></a>
+                <a href="#login" class="login-btn">Login</a>
+            </div>
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="trade-hero">
+    <!-- Page Header Component -->
+    <section class="trade-header">
         <div class="container">
-            <h1>Trade Solar Energy Seamlessly & Profitably!</h1>
-            <p>Sell excess solar power & buy affordable green energy—You've got it direct.</p>
-            <div class="hero-buttons">
-                <button class="btn primary">Sell My Energy</button>
-                <button class="btn secondary">Buy Green Energy</button>
-            </div>
+            <h1>Trade Your Energy</h1>
+            <p>Buy and sell renewable energy with other community members</p>
         </div>
     </section>
 
-    <!-- Energy Listings Section -->
-    <section class="energy-listings">
+    <!-- Energy Trading Form Component -->
+    <section class="trading-form">
         <div class="container">
-            <h2>Live Energy Listings – Buy or Sell Instantly</h2>
-            
-            <!-- Filters -->
-            <div class="listings-filters">
-                <div class="filter-group">
-                    <label>Location</label>
-                    <select>
-                        <option>All Regions</option>
-                        <!-- Add more options -->
-                    </select>
-                </div>
-                <div class="filter-group">
-                    <label>Energy Type</label>
-                    <select>
-                        <option>All Types</option>
-                        <!-- Add more options -->
-                    </select>
-                </div>
-                <div class="filter-group">
-                    <label>Safety Rating</label>
-                    <select>
-                        <option>All Ratings</option>
-                        <!-- Add more options -->
-                    </select>
-                </div>
-                <div class="filter-group">
-                    <label>Sort by</label>
-                    <select>
-                        <option>Featured</option>
-                        <!-- Add more options -->
-                    </select>
-                </div>
-            </div>
-
-            <!-- Energy Packages -->
-            <div class="energy-packages">
-                <div class="package-card">
-                    <div class="package-header">
-                        <h3>Solar Energy Package</h3>
-                        <span class="status available">Available</span>
-                    </div>
-                    <div class="package-details">
-                        <div class="detail-item">
-                            <span>Energy Available:</span>
-                            <strong>500 kWh</strong>
-                        </div>
-                        <div class="detail-item">
-                            <span>Price Per kWh:</span>
-                            <strong>€0.12</strong>
-                        </div>
-                        <div class="rating">
-                            <i class="fas fa-star"></i>
-                            <span>4.8 (735 reviews)</span>
-                        </div>
-                    </div>
-                    <button class="btn primary">Buy Now</button>
-                </div>
-                <!-- More package cards... -->
-            </div>
-        </div>
-    </section>
-
-    <!-- How It Works -->
-    <section class="trade-process">
-        <div class="container">
-            <h2>Turn Your Excess Solar Energy Into Passive Income</h2>
-            <div class="process-steps">
-                <div class="step-card">
-                    <div class="step-icon">
-                        <i class="fas fa-list"></i>
-                    </div>
-                    <h3>List Your Energy</h3>
-                    <p>Enter details like energy capacity and price per kWh</p>
-                </div>
-                <div class="step-card">
-                    <div class="step-icon">
-                        <i class="fas fa-search"></i>
-                    </div>
-                    <h3>Find Buyers Instantly</h3>
-                    <p>Get matched with customers in your area</p>
-                </div>
-                <div class="step-card">
-                    <div class="step-icon">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <h3>Get Paid Securely</h3>
-                    <p>Transactions are automated with fast settlement</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Listing Form -->
-    <section class="listing-form">
-        <div class="container">
-            <div class="form-card">
-                <h2>List Your Energy for Sale</h2>
-                <form id="energyListingForm">
+            <div class="form-container">
+                <h2>List Your Energy</h2>
+                <form id="energyForm">
                     <div class="form-group">
-                        <label>Energy Amount Available (kWh)</label>
-                        <input type="number" required>
+                        <label for="amount">Amount (kWh)</label>
+                        <input type="number" id="amount" name="amount" required>
                     </div>
                     <div class="form-group">
-                        <label>Price per kWh (€)</label>
-                        <input type="number" step="0.01" required>
+                        <label for="price">Price per kWh (€)</label>
+                        <input type="number" id="price" name="price" step="0.01" required>
                     </div>
                     <div class="form-group">
-                        <label>Preferred Payment Method</label>
-                        <select required>
-                            <option>Bank Transfer</option>
-                            <option>Credit Card</option>
-                            <option>PayPal</option>
-                        </select>
+                        <label for="availableTime">Available Time</label>
+                        <input type="datetime-local" id="availableTime" name="availableTime" required>
                     </div>
-                    <div class="form-group">
-                        <label>Upload Verification</label>
-                        <input type="file" accept="image/*">
-                    </div>
-                    <button type="submit" class="btn primary">List My Energy</button>
+                    <button type="submit" class="btn primary">List Energy</button>
                 </form>
             </div>
         </div>
     </section>
 
-    <!-- Security Features -->
-    <section class="security-features">
+    <!-- Market Statistics Component -->
+    <section class="market-section">
         <div class="container">
-            <h2>Secure, Transparent & Fast Transactions</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <i class="fas fa-lock"></i>
-                    <h3>Escrow Protection</h3>
-                    <p>Payments are held securely until energy is delivered</p>
+            <h2>Current Market</h2>
+            <div class="market-stats">
+                <div class="stat-card">
+                    <h3>Current Price</h3>
+                    <p class="price">€0.15/kWh</p>
                 </div>
-                <div class="feature-card">
-                    <i class="fas fa-user-check"></i>
-                    <h3>Verified Sellers Only</h3>
-                    <p>We're verified for secure trade</p>
+                <div class="stat-card">
+                    <h3>24h Volume</h3>
+                    <p>1,234 kWh</p>
                 </div>
-                <div class="feature-card">
-                    <i class="fas fa-file-contract"></i>
-                    <h3>Instant Smart Contracts</h3>
-                    <p>Automated & blockchain-powered for full transparency</p>
+                <div class="stat-card">
+                    <h3>Active Traders</h3>
+                    <p>45</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Trading Benefits -->
-    <section class="trading-benefits">
+    <!-- Energy Listings Table Component -->
+    <section class="listings-section">
         <div class="container">
-            <h2>Your Energy Trades, Simplified!</h2>
-            <div class="benefits-grid">
-                <div class="benefits-column">
-                    <h3>For Buyers</h3>
-                    <ul>
-                        <li><i class="fas fa-check"></i> Trade Renewable Energy</li>
-                        <li><i class="fas fa-check"></i> Transparent Reports</li>
-                        <li><i class="fas fa-check"></i> Regular Refunds</li>
-                    </ul>
-                </div>
-                <div class="benefits-column">
-                    <h3>For Sellers</h3>
-                    <ul>
-                        <li><i class="fas fa-check"></i> Receive money fast & earnings</li>
-                        <li><i class="fas fa-check"></i> Set your own price</li>
-                        <li><i class="fas fa-check"></i> Withdraw at your time</li>
-                    </ul>
-                </div>
-            </div>
-            <button class="btn primary center">Open My Dashboard</button>
-        </div>
-    </section>
-
-    <!-- Testimonials -->
-    <section class="testimonials">
-        <div class="container">
-            <h2>Join Thousands of Users Trading Green Energy!</h2>
-            <div class="testimonial-grid">
-                <!-- Testimonial cards here -->
-            </div>
-            <button class="btn primary center">Start Trading Today!</button>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="trade-cta">
-        <div class="container">
-            <h2>Power the Future – Trade Energy Now!</h2>
-            <div class="cta-buttons">
-                <button class="btn primary">Start Trading</button>
-                <button class="btn secondary">Buy Renewable Energy</button>
+            <h2>Available Energy</h2>
+            <div class="listings-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Seller</th>
+                            <th>Amount</th>
+                            <th>Price</th>
+                            <th>Available</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="listingsTableBody">
+                        <!-- Dynamic Energy Listings -->
+                    </tbody>
+                </table>
             </div>
         </div>
     </section>
 
-    <!-- Footer (Same as index.html) -->
+    <!-- Footer Grid Component -->
     <footer class="footer">
-        <!-- ... footer content ... -->
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Company Info</h3>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Press</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </footer>
 
+    <!-- JavaScript Dependencies -->
     <script src="js/main.js"></script>
     <script src="js/trade.js"></script>
 </body>
