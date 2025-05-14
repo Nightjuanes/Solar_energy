@@ -6,8 +6,11 @@
     <title>EcoPowerX - Solar Energy Solutions</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="index.js"></script>
+    
 </head>
 <body>
+ 
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
@@ -32,20 +35,25 @@
             </div>
         </div>
     </nav>
-
-    <!-- Hero Section -->
-    <section class="hero">
+ <!-- Hero Section -->
+        <section class="hero">
         <div class="hero-content">
             <h1>Powering a Sustainable Future</h1>
             <h2>Buy & Sell Solar Energy Today!</h2>
             <p>Join the movement towards clean energy and a self-sufficient future.</p>
             <div class="hero-buttons">
-                <button class="btn primary">Shop Solar Products</button>
-                <button class="btn secondary">Sell Excess Energy</button>
+            <button class="btn primary" id="shop-button">Shop Solar Products</button>
+            <button class="btn secondary">Sell Excess Energy</button>
+            <button class="btn help" id="help-button">Need Help?</button>
+              <div id="helpBox" class="floating-help" style="display: none">
+            <p>Do you  DD need help? <a href="trade.html">Click here</a></p>
+        </div>
             </div>
         </div>
-    </section>
+        </section>
 
+    
+   
     <!-- Featured Products -->
     <section class="featured-products">
         <div class="container">
