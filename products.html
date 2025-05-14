@@ -6,11 +6,12 @@
     <title>Products - EcoPowerX</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/products.css">
-    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="css/grid.css">
+    <!-- External Icon Library -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <!-- Navigation -->
+    <!-- Main Navigation Component -->
     <nav class="navbar">
         <div class="nav-container">
             <a href="index.html" class="logo">
@@ -27,12 +28,15 @@
             <div class="nav-icons">
                 <a href="#search"><i class="fas fa-search"></i></a>
                 <a href="#cart"><i class="fas fa-shopping-cart"></i><span class="cart-count">0</span></a>
-                <a href="#account"><i class="fas fa-user"></i></a>
+                <a href="#login" class="login-btn">Login</a>
+            </div>
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Hero Section Component -->
     <section class="hero">
         <div class="hero-container">
             <div class="hero-content">
@@ -49,10 +53,10 @@
         </div>
     </section>
 
-    <!-- Products Section -->
+    <!-- Products Catalog Component -->
     <section class="products-section">
         <div class="container">
-            <!-- Filters Sidebar -->
+            <!-- Filter Sidebar Component -->
             <aside class="filters">
                 <h3>Filters</h3>
                 <div class="filter-group">
@@ -76,14 +80,14 @@
                 </div>
             </aside>
 
-            <!-- Products Grid -->
+            <!-- Products Grid Component -->
             <div class="products-grid" id="productsGrid">
-                <!-- Products will be dynamically inserted here -->
+                <!-- Dynamic Product Cards -->
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- Footer Grid Component -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
@@ -95,11 +99,11 @@
                         <li><a href="#">Press</a></li>
                     </ul>
                 </div>
-                <!-- Add more footer sections as needed -->
             </div>
         </div>
     </footer>
 
+    <!-- JavaScript Dependencies -->
     <script src="js/main.js"></script>
     <script src="js/products.js"></script>
 </body>
