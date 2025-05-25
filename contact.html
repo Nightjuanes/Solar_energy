@@ -53,14 +53,17 @@
         }
 
         .hero {
-            background-color: white;
+            position: relative;
             padding: 4rem 5%;
             text-align: center;
-            background-image: url('customer-service.jpg');
+            color: white;
+            min-height: 400px;
             background-size: cover;
             background-position: center;
-            position: relative;
-            color: white;
+            background-repeat: no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .hero::before {
@@ -70,12 +73,13 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(0,0,0,0.5);
+            background: rgba(4, 0, 109, 0.187);
         }
 
         .hero-content {
             position: relative;
             z-index: 1;
+            width: 100%;
         }
 
         .hero h1 {
@@ -352,7 +356,7 @@
         </div>
     </nav>
 
-    <div class="hero">
+    <div class="hero" style="background-image: url('img/image2.jpg');">
         <div class="hero-content">
             <h1>We're Here to Help!</h1>
             <p>Need assistance? Get in touch with our team of experts at anytime!</p>
