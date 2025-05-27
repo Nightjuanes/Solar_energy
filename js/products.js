@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
             title: 'Premium Solar Panel X1',
             price: 599,
             originalPrice: 799,
-            image: 'images/products/solar-panel-1.jpg',
+            image: 'images/products/panel.jpg',
             rating: 4.5,
             reviews: 126,
             description: '25% Efficiency Rating, 25-Year Warranty'
