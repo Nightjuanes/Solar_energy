@@ -1,0 +1,108 @@
+ body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #ffffff;
+    }
+
+    .container {
+      display: flex;
+      height: 80vh;
+    }
+
+    .left {
+      flex: 1;
+      background: #f4fbf9;
+      padding: 80px 60px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .left h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: #1d1d1d;
+    }
+
+    .left p {
+      font-size: 1.1rem;
+      color: #4d4d4d;
+      margin-bottom: 40px;
+      max-width: 500px;
+    }
+
+    .left button {
+      background-color: #3b925c;
+      color: white;
+      border: none;
+      border-radius: 25px;
+      padding: 14px 28px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+    }
+
+    .left button:hover {
+      background-color: #327e4e;
+    }
+
+    .right {
+      flex: 1;
+      background: url('image6.png') no-repeat center center;
+      background-size: cover;
+      border-bottom-left-radius: 40px;
+    }
+
+    .filters {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 30px 60px;
+      border-top: 1px solid #eee;
+      background-color: #ffffff;
+      flex-wrap: wrap;
+    }
+
+    .categories {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .category {
+      font-size: 1rem;
+      color: #444;
+      padding: 8px 16px;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .category.active {
+      background-color: #3b925c;
+      color: white;
+    }
+
+    .dropdown select {
+      font-size: 1rem;
+      padding: 10px 16px;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+
+      .right {
+        height: 300px;
+        border-radius: 0;
+      }
+
+      .filters {
+        flex-direction: column;
+        gap: 20px;
+        align-items: flex-start;
+      }}
