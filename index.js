@@ -64,4 +64,49 @@ document.addEventListener("DOMContentLoaded", () => {
             helpBox.style.display = "block";
         }, 60000); // 60 seconds
     });
+
+
+    fetch('./js/products.json')
+        .then(response => response.json())
+        .then(products => {
+            const randomProducts = getRandomProducts(products, 3);
+            renderFeaturedProducts(randomProducts);
+        })
+        .catch(error => console.error('Error loading featured products:', error));
 });
+
+// Utility to get N random items from an array
+function getRandomProducts(arr, n) {
+    const shuffled = arr.sort(() => 0.5 - Math.random());
+    return shuffled.slice(0, n);
+}
+function renderFeaturedProducts(products) {
+    const container = document.getElementById('featuredProducts');
+    container.innerHTML = '';
+
+    const discount = 0.10;
+    const currentTime = Date.now();
+    const discountEndTime = parseInt(localStorage.getItem("discountEndTime"));
+
+    products.forEach(product => {
+        const originalPrice = parseFloat(product.price);
+        const isDiscountActive = currentTime < discountEndTime;
+        const finalPrice = isDiscountActive
+            ? (originalPrice * (1 - discount)).toFixed(2)
+            : originalPrice.toFixed(2);
+
+        const card = document.createElement('div');
+        card.className = 'product-card';
+
+        card.innerHTML = `
+            <img src="${product.image}" alt="${product.title}">
+            <div class="product-info">
+                <h3>${product.title}</h3>
+                <div class="price">€${finalPrice}</div>
+                <button class="btn primary">Buy Now</button>
+            </div>
+        `;
+
+        container.appendChild(card);
+    });
+}

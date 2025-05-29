@@ -1,0 +1,113 @@
+[
+  {
+    "id": 1,
+    "title": "Premium Solar Panel X1",
+    "price": 599,
+    "originalPrice": 799,
+    "image": "images/products/panel.jpg",
+    "rating": 4.5,
+    "reviews": 126,
+    "description": "25% Efficiency Rating, 25-Year Warranty",
+    "category": "Solar Panels"
+  },
+  {
+    "id": 2,
+    "title": "High-Capacity Lithium Battery 5000",
+    "price": 899,
+    "originalPrice": 999,
+    "image": "images/products/battery.jpg",
+    "rating": 4.7,
+    "reviews": 200,
+    "description": "5000Wh Capacity, 10-Year Warranty, Fast Charge",
+    "category": "Batteries"
+},
+     {
+            "id": 9,
+            "title": "Ultra Solar Panel X-Pro",
+            "price": 749,
+            "originalPrice": 949,
+            "image": "images/products/panel-xpro.jpg",
+            "rating": 4.6,
+            "reviews": 155,
+            "description": "26% Efficiency, Anti-Reflective Glass, Weather Resistant",
+            "category": "Solar Panels"
+        },
+        {
+            "id": 10,
+            "title": "Deep Cycle Battery Max 12V",
+            "price": 399,
+            "originalPrice": 479,
+            "image": "images/products/battery-deep.jpg",
+            "rating": 4.4,
+            "reviews": 130,
+            "description": "12V, 200Ah, Maintenance-Free Design",
+            "category": "Batteries"
+        },
+        {
+            "id": 11,
+            "title": "Off-Grid Inverter Kit 4000",
+            "price": 999,
+            "originalPrice": 1199,
+            "image": "images/products/inverter-offgrid.jpg",
+            "rating": 4.7,
+            "reviews": 95,
+            "description": "Pure Sine Wave, 4000W, Compatible with Lithium Batteries",
+            "category": "Inverters"
+        },
+        {
+            "id": 12,
+            "title": "MC4 Connector Set (10 Pairs)",
+            "price": 19,
+            "originalPrice": 29,
+            "image": "images/products/mc4.jpg",
+            "rating": 4.5,
+            "reviews": 72,
+            "description": "UV Resistant, Easy Crimp, Secure Fit",
+            "category": "Accessories"
+        },
+        {
+            "id": 13,
+            "title": "Foldable Solar Panel 120W",
+            "price": 199,
+            "originalPrice": 249,
+            "image": "images/products/foldable-panel.jpg",
+            "rating": 4.3,
+            "reviews": 88,
+            "description": "Portable, Lightweight, USB and DC Outputs",
+            "category": "Solar Panels"
+        },
+        {
+            "id": 14,
+            "title": "PowerWall Home Battery 10kWh",
+            "price": 4999,
+            "originalPrice": 5999,
+            "image": "images/products/powerwall.jpg",
+            "rating": 4.9,
+            "reviews": 210,
+            "description": "10kWh Storage, Wall-Mounted, Smart App Integration",
+            "category": "Batteries"
+        },
+        {
+            "id": 15,
+            "title": "Grid-Tied Micro Inverter 600W",
+            "price": 249,
+            "originalPrice": 299,
+            "image": "images/products/micro-inverter.jpg",
+            "rating": 4.2,
+            "reviews": 60,
+            "description": "600W Capacity, MPPT Technology, IP67 Waterproof",
+            "category": "Inverters"
+        },
+        {
+            "id": 16,
+            "title": "Solar Combiner Box 4-String",
+            "price": 149,
+            "originalPrice": 189,
+            "image": "images/products/combiner-box.jpg",
+            "rating": 4.6,
+            "reviews": 50,
+            "description": "4-Input, Surge Protection, Breakers Included",
+            "category": "Accessories"
+        }
+    
+]

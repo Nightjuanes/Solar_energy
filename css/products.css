@@ -3,6 +3,10 @@
     background: linear-gradient(to right, #e6f7e9, #e6f0f7);
     padding: 4rem 0;
 }
+a{
+    text-decoration: none;
+    color: inherit;
+}
 
 .hero-container {
     max-width: 1200px;

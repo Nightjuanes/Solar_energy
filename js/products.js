@@ -1,37 +1,32 @@
-document.addEventListener('DOMContentLoaded', function() {
-    // Sample product data
-    const products = [
-        {
-            id: 1,
-            title: 'Premium Solar Panel X1',
-            price: 599,
-            originalPrice: 799,
-            image: 'images/products/panel.jpg',
-            rating: 4.5,
-            reviews: 126,
-            description: '25% Efficiency Rating, 25-Year Warranty'
-        },
-        // Add more products...
-    ];
+document.addEventListener('DOMContentLoaded', function () {
+    let allProducts = [];
 
-    // Initialize products
-    renderProducts(products);
+    // Fetch product data from JSON file
+    fetch('./js/products.json')
+        .then(response => response.json())
+        .then(products => {
+            allProducts = products;
+            renderProducts(allProducts);
+            setupFilters();
+        
+        })
+        .catch(error => console.error('Error:', error));
 
-    // Price range slider
-    const priceRange = document.getElementById('priceRange');
-    const minPrice = document.getElementById('minPrice');
-    const maxPrice = document.getElementById('maxPrice');
+    // Setup filters (checkboxes and price range)
+    function setupFilters() {
+        const priceRange = document.getElementById('priceRange');
+        const minPrice = document.getElementById('minPrice');
+        const checkboxes = document.querySelectorAll('.checkbox-group input');
 
-    priceRange.addEventListener('input', function() {
-        minPrice.textContent = `$${this.value}`;
-        filterProducts();
-    });
+        priceRange.addEventListener('input', function () {
+            minPrice.textContent = `$${this.value}`;
+            filterProducts();
+        });
 
-    // Product type checkboxes
-    const checkboxes = document.querySelectorAll('.checkbox-group input');
-    checkboxes.forEach(checkbox => {
-        checkbox.addEventListener('change', filterProducts);
-    });
+        checkboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', filterProducts);
+        });
+    }
 
     // Render products function
     function renderProducts(productsToRender) {
@@ -48,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function createProductCard(product) {
         const card = document.createElement('div');
         card.className = 'product-card';
-        
+
         card.innerHTML = `
             <div class="product-image">
                 <img src="${product.image}" alt="${product.title}">
@@ -74,17 +69,13 @@ document.addEventListener('DOMContentLoaded', function() {
             </div>
         `;
 
-        // Add event listeners
-        const addToCartBtn = card.querySelector('.add-to-cart');
-        addToCartBtn.addEventListener('click', () => addToCart(product));
-
-        const quickViewBtn = card.querySelector('.quick-view');
-        quickViewBtn.addEventListener('click', () => showQuickView(product));
+        card.querySelector('.add-to-cart').addEventListener('click', () => addToCart(product));
+        card.querySelector('.quick-view').addEventListener('click', () => showQuickView(product));
 
         return card;
     }
 
-    // Generate rating stars
+    // Generate stars
     function generateRatingStars(rating) {
         let stars = '';
         for (let i = 1; i <= 5; i++) {
@@ -99,34 +90,28 @@ document.addEventListener('DOMContentLoaded', function() {
         return stars;
     }
 
-    // Filter products function
+    // Filter products
     function filterProducts() {
-        const selectedPrice = parseInt(priceRange.value);
-        const selectedTypes = Array.from(checkboxes)
-            .filter(checkbox => checkbox.checked)
-            .map(checkbox => checkbox.value);
+        const selectedPrice = parseInt(document.getElementById('priceRange').value);
+        const selectedTypes = Array.from(document.querySelectorAll('.checkbox-group input:checked'))
+            .map(checkbox => checkbox.value.toLowerCase());
 
-        const filteredProducts = products.filter(product => {
+        const filtered = allProducts.filter(product => {
             const priceMatch = product.price >= selectedPrice;
-            const typeMatch = selectedTypes.length === 0 || selectedTypes.includes(product.type);
+            const typeMatch = selectedTypes.length === 0 || selectedTypes.includes(product.category.toLowerCase().replace(' ', '-'));
             return priceMatch && typeMatch;
         });
 
-        renderProducts(filteredProducts);
+        renderProducts(filtered);
     }
 
-    // Add to cart function
     function addToCart(product) {
-        // Implement cart functionality
         console.log(`Added ${product.title} to cart`);
-        // Update cart count
         const cartCount = document.querySelector('.cart-count');
         cartCount.textContent = parseInt(cartCount.textContent) + 1;
     }
 
-    // Quick view function
     function showQuickView(product) {
-        // Implement quick view modal
         console.log(`Quick view for ${product.title}`);
     }
 });

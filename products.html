@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/products.css">
     <link rel="stylesheet" href="css/grid.css">
+    <link rel="stylesheet" href="css/cart.css">
     <!-- External Icon Library -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
@@ -27,7 +28,7 @@
             </ul>
             <div class="nav-icons">
                 <a href="#search"><i class="fas fa-search"></i></a>
-                <a href="#cart"><i class="fas fa-shopping-cart"></i><span class="cart-count">0</span></a>
+                <a href="cart.html"><i class="fas fa-shopping-cart"></i><span class="cart-count">0</span></a>
                 <a href="#login" class="login-btn">Login</a>
             </div>
             <div class="mobile-menu-btn">
@@ -43,8 +44,8 @@
                 <h1>Power Your Home with the Best Solar Technology!</h1>
                 <p>Buy high-efficiency solar panels & trade excess energy seamlessly.</p>
                 <div class="hero-buttons">
-                    <button class="btn primary">Shop Solar Products</button>
-                    <button class="btn secondary">Sell Your Surplus Energy</button>
+                    <a href="#productsGrid" class="btn primary">Shop Solar Products</a>
+                    <button class="btn secondary"><a href="trade.html">Trade Your Surplus Energy</a></button>
                 </div>
             </div>
             <div class="hero-image">
@@ -71,13 +72,12 @@
                 </div>
                 <div class="filter-group">
                     <h4>Product Type</h4>
-                    <div class="checkbox-group">
-                        <label><input type="checkbox" value="solar-panels"> Solar Panels</label>
-                        <label><input type="checkbox" value="batteries"> Batteries</label>
-                        <label><input type="checkbox" value="inverters"> Inverters</label>
-                        <label><input type="checkbox" value="accessories"> Accessories</label>
-                    </div>
-                </div>
+                  <div class="checkbox-group">
+                    <label><input type="checkbox" value="solar-panels"> Solar Panels</label>
+                    <label><input type="checkbox" value="batteries"> Batteries</label>
+                    <label><input type="checkbox" value="inverters"> Inverters</label>
+                    <label><input type="checkbox" value="accessories"> Accessories</label>
+                 </div>
             </aside>
 
             <!-- Products Grid Component -->
@@ -130,12 +130,19 @@
             </div>
         </div>
     </footer>
+ 
+
 
     <script src="js/main.js"></script>
+ 
+
 </body>
 </html>
     <!-- JavaScript Dependencies -->
     <script src="js/main.js"></script>
     <script src="js/products.js"></script>
+    <script src="js/cart.js"></script>
+
 </body>
+
 </html>
