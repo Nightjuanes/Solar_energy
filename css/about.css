@@ -1,0 +1,338 @@
+.about-hero {
+    padding-top: 80px;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../images/image1.jpg') center/cover no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.about-hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+}
+
+.about-hero p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    margin-bottom: 2rem;
+}
+
+.learn-more, .get-started-today {
+    background: #2f855a !important;
+    color: white !important;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.learn-more:hover, .get-started-today:hover {
+    background: #276749 !important;
+}
+
+/* Commitment Section */
+.commitment-section {
+    padding: 5rem 0;
+    background-color: white;
+}
+
+.commitment-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.commitment-text h2 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 1.5rem;
+}
+
+.commitment-text p {
+    color: #666;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.commitment-points {
+    list-style: none;
+    padding: 0;
+}
+
+.commitment-points li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    color: #555;
+}
+
+.commitment-points i {
+    color: #28a745;
+    font-size: 1.5rem;
+    margin-right: 1rem;
+}
+
+.commitment-diagram {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.commitment-diagram img {
+    width: 100%;
+    height: auto;
+}
+
+/* Numbers Section */
+.numbers-section {
+    padding: 5rem 0;
+    background-color: #f8f9fa;
+}
+
+.numbers-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.number-item {
+    text-align: center;
+    padding: 2rem;
+}
+
+.number-item i {
+    font-size: 2.5rem;
+    color: #28a745;
+    margin-bottom: 1rem;
+}
+
+.number-item .number {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.number-item .label {
+    color: #666;
+    font-size: 1.1rem;
+    line-height: 1.4;
+}
+
+/* Team Section */
+.team-section {
+    padding: 5rem 0;
+    background-color: white;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.team-member {
+    text-align: center;
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.team-member:hover {
+    transform: translateY(-5px);
+}
+
+.team-member img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    object-fit: cover;
+}
+
+.team-member h3 {
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.team-member .position {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.team-member p {
+    color: #555;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* Trusted By Section */
+.trusted-by-section {
+    padding: 5rem 0;
+    background-color: white;
+}
+
+.trusted-logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.trusted-logos img {
+    height: 40px;
+    width: auto;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+.trusted-logos img:hover {
+    opacity: 1;
+}
+
+.trusted-logos i {
+    font-size: 3rem;
+    margin: 0 1.5rem;
+}
+
+/* Join Movement Section */
+.join-movement {
+    padding: 5rem 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../images/image2.jpg') center/cover no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+}
+
+.movement-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.movement-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.movement-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.get-started-today {
+    display: inline-block;
+    background-color: #28a745;
+    color: white;
+    text-decoration: none;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.get-started-today:hover {
+    background-color: #218838;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.section-title h2 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+/* Social Links */
+.social-links {
+    margin-top: 1rem;
+}
+
+.social-links a {
+    color: #666;
+    margin: 0 0.5rem;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #28a745;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .numbers-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .commitment-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .commitment-diagram {
+        order: -1;
+    }
+    
+    .about-hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .numbers-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .trusted-logos {
+        gap: 2rem;
+    }
+
+    .trusted-logos img {
+        height: 30px;
+    }
+}
+
+/* OVERRIDES TO FIX HEADER/FOOTER FOR ABOUT PAGE */
+/* (intentionally left blank to allow style.css to apply) */
+
+/* Ensure about page footer matches home page */
+.footer, footer.footer {
+    background: #1a202c !important;
+    color: white !important;
+}
+.footer-section a, footer.footer .footer-section a {
+    color: #cbd5e0 !important;
+}
+.footer-section a:hover, footer.footer .footer-section a:hover {
+    color: white !important;
+} 
