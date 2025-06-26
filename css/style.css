@@ -486,3 +486,30 @@ body {
   width: 100%;
   cursor: pointer;
 }
+
+#featuredProducts .product-card {
+  width: 100%; /* Increase width */
+  padding: 20px; /* More padding */
+  font-size: 1.1rem; /* Slightly larger text */
+}
+
+#featuredProducts .product-card img {
+  max-width: 100%;
+  height: auto;
+  transform: scale(1.1); /* Slight zoom on image */
+}
+
+#featuredProducts h3 {
+  font-size: 1.3rem;
+}
+
+#featuredProducts .price {
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+#featuredProducts button {
+  font-size: 1rem;
+  padding: 10px 20px;
+}
+
