@@ -178,7 +178,7 @@ function renderFeaturedProducts(products) {
             <div class="product-info">
                 <h3>${product.title}</h3>
                 <div class="price">€${finalPrice}</div>
-                <button class="btn primary">Buy Now</button>
+                <a href="products.html"><button class="btn primary">Buy Now</button></a>
             </div>
         `;
 
