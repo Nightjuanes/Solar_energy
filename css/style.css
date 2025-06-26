@@ -80,18 +80,21 @@ body {
 }
 
 /* Hero Section */
-/* Hero Section */
 .hero {
     margin-top: 80px;
-    background: linear-gradient(to right, rgba(47, 133, 90, 0.9), rgba(49, 151, 149, 0.9)),
-                url('../images/trade-hero-bg.jpg');
+    background: linear-gradient(to right, rgba(47, 133, 90, 0.7), rgba(49, 151, 149, 0.7)), url('../images/main.jpg');
     background-size: cover;
     background-position: center;
-    padding: 6rem 0;
+    height: 60vh;
+    min-height: 350px;
+    max-height: 700px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     text-align: center;
     color: white;
 }
-
 
 .hero-content {
     max-width: 800px;
