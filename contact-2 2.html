@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact & Support - EcoPowerX</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        :root {
+            --primary-green: #4D9D74;
+            --primary-blue: #274ee8;
+            --text-dark: #333;
+            --text-light: #666;
+        }
+
+        body {
+            line-height: 1.6;
+            background-color: #f8f9fa;
+        }
+
+        .nav {
+            background-color: white;
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .logo img {
+            height: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            margin-left: 2rem;
+        }
+
+        .get-started {
+            background-color: var(--primary-green);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            text-decoration: none;
+        }
+
+        .hero {
+            position: relative;
+            padding: 4rem 5%;
+            text-align: center;
+            color: white;
+            min-height: 400px;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(4, 0, 109, 0.187);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        .btn {
+            padding: 0.8rem 1.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .btn-outline-light {
+            border: 2px solid white;
+            color: rgb(248, 247, 247);
+        }
+
+        .btn-green {
+            background-color: var(--primary-green);
+            color: white;
+        }
+
+        .btn-blue {
+            background-color: var(--primary-blue);
+            color: white;
+        }
+
+        .contact-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            padding: 4rem 5%;
+            background-color: white;
+        }
+
+        .card {
+            padding: 2rem;
+            text-align: center;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .card i {
+            font-size: 2rem;
+            color: var(--primary-green);
+            margin-bottom: 1rem;
+        }
+
+        .card h3 {
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .card p {
+            color: var(--text-light);
+            margin-bottom: 0.5rem;
+        }
+
+        .quick-assistance {
+            background-color: var(--primary-green);
+            color: white;
+            text-align: center;
+            padding: 4rem 5%;
+        }
+
+        .quick-assistance h2 {
+            margin-bottom: 1rem;
+        }
+
+        .quick-assistance p {
+            margin-bottom: 2rem;
+        }
+
+        .faq-section {
+            padding: 4rem 5%;
+            background-color: white;
+        }
+
+        .faq-section h2 {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .faq-category {
+            background: #fff;
+            border: 2px solid #f0f0f0;
+            border-radius: 16px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+            padding: 2rem 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .faq-category h3 {
+            color: var(--text-dark);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .faq-category h3 img {
+            width: 24px;
+        }
+
+        .faq-item {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+            transition: box-shadow 0.2s;
+        }
+
+        .faq-arrow {
+            margin-left: 1rem;
+            font-size: 1.2rem;
+            transition: transform 0.3s;
+        }
+
+        .faq-answer {
+            display: none;
+            padding: 1rem 0 0 0;
+            color: var(--text-light);
+            font-size: 0.98rem;
+        }
+
+        .faq-item.open .faq-answer {
+            display: block;
+        }
+
+        .faq-item.open .faq-arrow {
+            transform: rotate(180deg);
+        }
+
+        .support-form {
+            padding: 4rem 5%;
+            background-color: white;
+        }
+
+        .form-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 3rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+        }
+
+        .form-container h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: var(--text-dark);
+            font-size: 1.8rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary-green);
+        }
+
+        .form-control::placeholder {
+            color: #999;
+        }
+
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .form-container .btn-green {
+            width: auto;
+            padding: 1rem 2.5rem;
+            font-size: 1rem;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            border-radius: 30px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .form-container .btn-green:hover {
+            background-color: #3f8b64;
+        }
+
+        .file-upload {
+            border: 2px dashed #e0e0e0;
+            border-radius: 8px;
+            padding: 2rem;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            cursor: pointer;
+            transition: border-color 0.3s ease;
+        }
+
+        .file-upload:hover {
+            border-color: var(--primary-green);
+        }
+
+        .file-upload p {
+            color: #666;
+            margin: 0;
+        }
+
+        .newsletter {
+            background-color: var(--primary-blue);
+            color: white;
+            text-align: center;
+            padding: 4rem 5%;
+        }
+
+        .newsletter-form {
+            display: flex;
+            max-width: 500px;
+            margin: 2rem auto 0;
+            gap: 1rem;
+        }
+
+        .newsletter-form .btn {
+            background-color: var(--primary-green) !important;
+            color: #fff !important;
+            border: none !important;
+        }
+
+        .newsletter-form .form-control {
+            border-radius: 30px !important;
+        }
+
+        .footer {
+            background-color: #1a1a1a;
+            color: white;
+            padding: 4rem 5%;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+
+        .footer-section h4 {
+            margin-bottom: 1.5rem;
+            color: #fff;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-section ul li a {
+            color: #999;
+            text-decoration: none;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-icons a {
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        .btn,
+        .btn-outline-light,
+        .btn-green,
+        .btn-blue,
+        .newsletter-form button,
+        .get-started {
+            border-radius: 30px !important;
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <a href="/" class="logo">
+            <img src="ecopowerx-logo.png" alt="EcoPowerX">
+        </a>
+        <div class="nav-links">
+            <a href="#">Home</a>
+            <a href="#">Products</a>
+            <a href="#">Clean Energy</a>
+            <a href="#">Blog</a>
+            <a href="#">About Us</a>
+            <a href="#" class="get-started">Get Started</a>
+        </div>
+    </nav>
+
+    <div class="hero" style="background-image: url('images/image2.jpg');">
+        <div class="hero-content">
+            <h1>We're Here to Help!</h1>
+            <p>Need assistance? Get in touch with our team of experts at anytime!</p>
+            <div class="button-group">
+                <a href="#" class="btn btn-outline-light">Email Us</a>
+                <a href="#" class="btn btn-green">Live Chat</a>
+                <a href="#" class="btn btn-blue">Call Support</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="contact-cards">
+        <div class="card">
+            <i class="fas fa-map-marker-alt"></i>
+            <h3>Headquarters</h3>
+            <p>EcoPowerX HQ - Amsterdam, Germany</p>
+            <p>Parkstrasse 12, 10115 Karlsruhe</p>
+            <p>Germany</p>
+            <div style="margin-top:1rem; border-radius:8px; overflow:hidden; box-shadow:0 2px 8px rgba(0,0,0,0.08);">
+                <iframe
+                    src="https://www.openstreetmap.org/export/embed.html?bbox=8.3858%2C49.0069%2C8.4068%2C49.0169&amp;layer=mapnik&amp;marker=49.0119%2C8.3968"
+                    style="width:100%; height:200px; border:0;"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    title="EcoPowerX HQ Map"></iframe>
+            </div>
+        </div>
+        <div class="card">
+            <i class="fas fa-phone-alt"></i>
+            <h3>Phone Support</h3>
+            <p>Call us for anything!</p>
+            <p>Germany: +49 7721559 356</p>
+            <p>International: +45 (0) 7558 8583</p>
+        </div>
+        <div class="card">
+            <i class="fas fa-envelope"></i>
+            <h3>Email Support</h3>
+            <p>Technical Support</p>
+            <p>support@ecopowerx.com</p>
+            <p>partnership@ecopowerx.com</p>
+        </div>
+    </div>
+
+    <div class="quick-assistance">
+        <h2>Need Quick Assistance?</h2>
+        <p>Our AI-powered chatbot and support team are available to assist you</p>
+        <a href="#" class="btn btn-outline-light">Start Live Chat</a>
+    </div>
+
+    <div class="faq-section">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-grid">
+            <div class="faq-category">
+                <h3>
+                    <img src="shipping-icon.png" alt="">
+                    Orders & Shipping
+                </h3>
+                <div class="faq-item" onclick="toggleFaq(this)">
+                    <p>How long does shipping take?</p>
+                    <span class="faq-arrow">&#9662;</span>
+                    <div class="faq-answer">Shipping typically takes 3-5 business days depending on your location.</div>
+                </div>
+                <div class="faq-item" onclick="toggleFaq(this)">
+                    <p>What payment methods do you accept?</p>
+                    <span class="faq-arrow">&#9662;</span>
+                    <div class="faq-answer">We accept credit cards, PayPal, and bank transfers.</div>
+                </div>
+            </div>
+            <div class="faq-category">
+                <h3>
+                    <img src="energy-icon.png" alt="">
+                    Trading Solar Energy
+                </h3>
+                <div class="faq-item" onclick="toggleFaq(this)">
+                    <p>How does energy trading work?</p>
+                    <span class="faq-arrow">&#9662;</span>
+                    <div class="faq-answer">Energy trading allows you to sell surplus solar energy back to the grid or other users.</div>
+                </div>
+                <div class="faq-item" onclick="toggleFaq(this)">
+                    <p>Is my solar energy partnership safe?</p>
+                    <span class="faq-arrow">&#9662;</span>
+                    <div class="faq-answer">Yes, all partnerships are secured and monitored for safety and compliance.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+    function toggleFaq(item) {
+        item.classList.toggle('open');
+    }
+    </script>
+    <div class="support-form">
+        <div class="form-container">
+            <h2>Submit a Support Request</h2>
+            <form>
+                <div style="display: flex; gap: 1.5rem;">
+                    <div class="form-group" style="flex:1; margin-bottom: 1.5rem;">
+                        <input type="text" class="form-control" placeholder="Full Name" required>
+                    </div>
+                    <div class="form-group" style="flex:1; margin-bottom: 1.5rem;">
+                        <input type="email" class="form-control" placeholder="Email Address" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <select class="form-control" required>
+                        <option value="" selected disabled>Select Category</option>
+                        <option>Orders & Shipping</option>
+                        <option>Technical Support</option>
+                        <option>Account Related</option>
+                        <option>Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <textarea class="form-control" rows="5" placeholder="Message" required></textarea>
+                </div>
+                <div class="file-upload">
+                    <p>Drag and drop files here or click to upload</p>
+                </div>
+                <button type="submit" class="btn btn-green">Submit Request</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="newsletter">
+        <h2>Join Our Community & Stay Updated!</h2>
+        <p>Get the latest updates on clean energy solutions & support tips.</p>
+        <div class="newsletter-form">
+            <input type="email" class="form-control" placeholder="Enter your email">
+            <button class="btn btn-outline-light">Subscribe</button>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-section">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Sustainability</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">FAQs</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">What's Privacy</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Connect With Us</h4>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
