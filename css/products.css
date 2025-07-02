@@ -220,3 +220,265 @@ a{
         top: 0;
     }
 }
+
+/* --- Call to Action (CTA) Section --- */
+/* Styles to prompt the user to take an action, with a professional background. */
+
+.cta-section {
+    /* Use a background image if you want the visual like the example,
+       otherwise, use a solid color. */
+    background: url('../images/solar-panels-cta.jpg') no-repeat center center / cover;
+    position: relative; /* Needed for the overlay effect */
+    padding: 6rem 0; /* More padding for visual height, adjust as needed */
+    text-align: center; /* Center all text and inline-block elements */
+    color: white; /* Default text color for the section */
+    overflow: hidden; /* Ensures background image doesn't overflow */
+}
+
+/* Optional: Overlay for better text readability on top of a background image */
+.cta-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* Dark overlay (adjust alpha for transparency) */
+    z-index: 1; /* Place overlay above background image but below text */
+}
+
+/* Inner container to constrain content width and center it */
+.cta-inner-container {
+    max-width: 800px; /* Adjust max-width as desired, making it a bit narrower for focus */
+    margin: 0 auto;   /* Center the container horizontally */
+    padding: 0 20px;  /* Padding for content inside the container */
+    position: relative; /* Ensure content is above the pseudo-element overlay */
+    z-index: 2; /* Place content above the overlay */
+}
+
+.cta-section h2 {
+    font-size: 2.8rem; /* Larger, more impactful heading */
+    font-weight: 700;  /* Bolder font weight */
+    margin-bottom: 1rem; /* Space below the main heading */
+    color: white;      /* Ensure heading is white */
+    line-height: 1.2;  /* Slightly tighter line height for large text */
+}
+
+.cta-section p {
+    font-size: 1.2rem; /* Clearer sub-text */
+    margin-bottom: 2.5rem; /* More space before the button */
+    color: #e0e0e0; /* Slightly off-white for sub-text */
+    max-width: 600px; /* Limit paragraph width for better readability */
+    margin-left: auto; /* Center the paragraph if max-width is set */
+    margin-right: auto; /* Center the paragraph if max-width is set */
+}
+
+/* Button styling - reusing existing .btn.primary classes */
+/* If you need specific styling for THIS button, define it here: */
+.cta-section .btn.primary {
+    padding: 1rem 2.5rem; /* Larger padding for a more prominent button */
+    font-size: 1.1rem; /* Slightly larger font for the button text */
+    /* Other styles from your global .btn.primary will apply (background, color, etc.) */
+}
+
+/* Responsive adjustments for the CTA section */
+@media (max-width: 768px) {
+    .cta-section {
+        padding: 4rem 0; /* Less vertical padding on smaller screens */
+    }
+
+    .cta-section h2 {
+        font-size: 2rem; /* Smaller heading on mobile */
+    }
+
+    .cta-section p {
+        font-size: 1rem; /* Smaller paragraph text on mobile */
+    }
+
+    .cta-section .btn.primary {
+        padding: 0.8rem 2rem; /* Adjust button size for mobile */
+        font-size: 1rem;
+    }
+
+    .cta-inner-container {
+        padding: 0 15px; /* Adjust inner padding for mobile */
+    }
+}
+
+/* --- Site Footer Specific Styles --- */
+/* Designed to be robust and independent of other global styles. */
+
+.site-footer {
+    background: #1a202c; /* Deep dark background */
+    color: #ffffff;      /* White text by default */
+    padding: 4rem 0 2rem; /* Top, bottom padding; full width background */
+    width: 100%;         /* Ensure it always spans full width */
+    box-sizing: border-box; /* Include padding in width/height calculation */
+}
+
+/* Container for footer content - ensures content aligns with page max-width */
+.site-footer-container {
+    max-width: 1200px; /* Specific max-width for footer content */
+    margin: 0 auto;    /* Center the container */
+    padding: 0 20px;   /* Padding on left/right for smaller screens/edges */
+}
+
+/* Grid layout for footer columns */
+.site-footer-grid {
+    display: grid;
+    gap: 2rem; /* Gap between grid columns/rows */
+    margin-bottom: 3rem; /* Space before the bottom section */
+    /* Default for mobile, will be overridden by media queries */
+    grid-template-columns: 1fr;
+}
+
+/* Individual footer column styling */
+.footer-column h3 {
+    margin-bottom: 1.5rem;
+    color: #f7fafc; /* Slightly lighter heading color */
+    font-size: 1.25rem; /* Larger heading for emphasis */
+    font-weight: 600; /* Bolder headings */
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 0.75rem; /* Spacing between list items */
+}
+
+.footer-column a {
+    color: #cbd5e0; /* Default link color */
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-size: 0.95rem; /* Slightly smaller link text */
+}
+
+.footer-column a:hover {
+    color: #ffffff; /* White on hover */
+}
+
+/* Social icons styling */
+.social-icons {
+    display: flex;
+    gap: 1.2rem; /* Spacing between icons */
+    margin-bottom: 1.5rem; /* Space before newsletter form */
+}
+
+.social-icons a {
+    color: #cbd5e0; /* Icon color */
+    font-size: 1.4rem; /* Icon size */
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #2f855a; /* Green on hover */
+}
+
+/* Newsletter form styling */
+.newsletter-signup {
+    display: flex;
+    flex-wrap: wrap; /* Allows input/button to wrap on small screens */
+    gap: 0.5rem;
+}
+
+.newsletter-signup input[type="email"] {
+    flex-grow: 1; /* Input takes up available space */
+    padding: 0.75rem 1rem;
+    border: 1px solid #4a5568;
+    border-radius: 4px;
+    background-color: #2d3748;
+    color: #ffffff;
+    font-size: 0.95rem;
+}
+
+.newsletter-signup input[type="email"]::placeholder {
+    color: #a0aec0;
+}
+
+.newsletter-signup button[type="submit"] {
+    padding: 0.75rem 1.25rem;
+    background: #2f855a; /* Green submit button */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    font-size: 0.95rem;
+    white-space: nowrap; /* Prevent button text from wrapping */
+}
+
+.newsletter-signup button[type="submit"]:hover {
+    background: #276749;
+}
+
+/* Bottom section of the footer (copyright, privacy links) */
+.site-footer-bottom {
+    border-top: 1px solid #2d3748; /* Separator line */
+    padding-top: 2rem; /* Space above separator */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.85rem; /* Smaller font for legal text */
+    color: #a0aec0; /* Lighter color for copyright */
+}
+
+.site-footer-bottom a {
+    color: #a0aec0;
+    text-decoration: none;
+    margin: 0 0.5rem; /* Spacing between bottom links */
+    transition: color 0.3s ease;
+}
+
+.site-footer-bottom a:hover {
+    color: #ffffff;
+}
+
+
+/* --- Responsive Design for Site Footer --- */
+
+/* Desktop Layout (1200px and above) */
+@media (min-width: 1200px) {
+    .site-footer-grid {
+        grid-template-columns: repeat(4, 1fr); /* 4 columns on large screens */
+    }
+}
+
+/* Tablet Layout (768px to 1199px) */
+@media (max-width: 1199px) and (min-width: 768px) {
+    .site-footer-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on tablets */
+    }
+    .site-footer-container {
+        padding: 0 1.5rem; /* Slightly less padding on tablets */
+    }
+}
+
+/* Mobile Layout (767px and below) */
+@media (max-width: 767px) {
+    .site-footer-container {
+        padding: 0 1rem; /* Even less padding on mobile */
+    }
+    .site-footer-grid {
+        grid-template-columns: 1fr; /* Single column on mobile */
+        text-align: center; /* Center text for mobile columns */
+    }
+    .footer-column {
+        margin-bottom: 2rem; /* Space between stacked columns */
+    }
+    .footer-column:last-child {
+        margin-bottom: 0; /* No margin after the last column */
+    }
+    .social-icons,
+    .newsletter-signup {
+        justify-content: center; /* Center social icons and form */
+    }
+    .site-footer-bottom {
+        flex-direction: column; /* Stack copyright and links */
+        text-align: center;
+        gap: 0.75rem; /* Space between stacked elements */
+    }
+}

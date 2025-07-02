@@ -216,3 +216,180 @@
 .article a:hover {
   background-color: #327e4e;
 }
+/* --- Site Footer Specific Styles --- */
+/* Designed to be robust and independent of other global styles. */
+
+.site-footer {
+    background: #1a202c; /* Deep dark background */
+    color: #ffffff;      /* White text by default */
+    padding: 4rem 0 2rem; /* Top, bottom padding; full width background */
+    width: 100%;         /* Ensure it always spans full width */
+    box-sizing: border-box; /* Include padding in width/height calculation */
+}
+
+/* Container for footer content - ensures content aligns with page max-width */
+.site-footer-container {
+    max-width: 1200px; /* Specific max-width for footer content */
+    margin: 0 auto;    /* Center the container */
+    padding: 0 20px;   /* Padding on left/right for smaller screens/edges */
+}
+
+/* Grid layout for footer columns */
+.site-footer-grid {
+    display: grid;
+    gap: 2rem; /* Gap between grid columns/rows */
+    margin-bottom: 3rem; /* Space before the bottom section */
+    /* Default for mobile, will be overridden by media queries */
+    grid-template-columns: 1fr;
+}
+
+/* Individual footer column styling */
+.footer-column h3 {
+    margin-bottom: 1.5rem;
+    color: #f7fafc; /* Slightly lighter heading color */
+    font-size: 1.25rem; /* Larger heading for emphasis */
+    font-weight: 600; /* Bolder headings */
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 0.75rem; /* Spacing between list items */
+}
+
+.footer-column a {
+    color: #cbd5e0; /* Default link color */
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-size: 0.95rem; /* Slightly smaller link text */
+}
+
+.footer-column a:hover {
+    color: #ffffff; /* White on hover */
+}
+
+/* Social icons styling */
+.social-icons {
+    display: flex;
+    gap: 1.2rem; /* Spacing between icons */
+    margin-bottom: 1.5rem; /* Space before newsletter form */
+}
+
+.social-icons a {
+    color: #cbd5e0; /* Icon color */
+    font-size: 1.4rem; /* Icon size */
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #2f855a; /* Green on hover */
+}
+
+/* Newsletter form styling */
+.newsletter-signup {
+    display: flex;
+    flex-wrap: wrap; /* Allows input/button to wrap on small screens */
+    gap: 0.5rem;
+}
+
+.newsletter-signup input[type="email"] {
+    flex-grow: 1; /* Input takes up available space */
+    padding: 0.75rem 1rem;
+    border: 1px solid #4a5568;
+    border-radius: 4px;
+    background-color: #2d3748;
+    color: #ffffff;
+    font-size: 0.95rem;
+}
+
+.newsletter-signup input[type="email"]::placeholder {
+    color: #a0aec0;
+}
+
+.newsletter-signup button[type="submit"] {
+    padding: 0.75rem 1.25rem;
+    background: #2f855a; /* Green submit button */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    font-size: 0.95rem;
+    white-space: nowrap; /* Prevent button text from wrapping */
+}
+
+.newsletter-signup button[type="submit"]:hover {
+    background: #276749;
+}
+
+/* Bottom section of the footer (copyright, privacy links) */
+.site-footer-bottom {
+    border-top: 1px solid #2d3748; /* Separator line */
+    padding-top: 2rem; /* Space above separator */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.85rem; /* Smaller font for legal text */
+    color: #a0aec0; /* Lighter color for copyright */
+}
+
+.site-footer-bottom a {
+    color: #a0aec0;
+    text-decoration: none;
+    margin: 0 0.5rem; /* Spacing between bottom links */
+    transition: color 0.3s ease;
+}
+
+.site-footer-bottom a:hover {
+    color: #ffffff;
+}
+
+
+/* --- Responsive Design for Site Footer --- */
+
+/* Desktop Layout (1200px and above) */
+@media (min-width: 1200px) {
+    .site-footer-grid {
+        grid-template-columns: repeat(4, 1fr); /* 4 columns on large screens */
+    }
+}
+
+/* Tablet Layout (768px to 1199px) */
+@media (max-width: 1199px) and (min-width: 768px) {
+    .site-footer-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on tablets */
+    }
+    .site-footer-container {
+        padding: 0 1.5rem; /* Slightly less padding on tablets */
+    }
+}
+
+/* Mobile Layout (767px and below) */
+@media (max-width: 767px) {
+    .site-footer-container {
+        padding: 0 1rem; /* Even less padding on mobile */
+    }
+    .site-footer-grid {
+        grid-template-columns: 1fr; /* Single column on mobile */
+        text-align: center; /* Center text for mobile columns */
+    }
+    .footer-column {
+        margin-bottom: 2rem; /* Space between stacked columns */
+    }
+    .footer-column:last-child {
+        margin-bottom: 0; /* No margin after the last column */
+    }
+    .social-icons,
+    .newsletter-signup {
+        justify-content: center; /* Center social icons and form */
+    }
+    .site-footer-bottom {
+        flex-direction: column; /* Stack copyright and links */
+        text-align: center;
+        gap: 0.75rem; /* Space between stacked elements */
+    }
+}

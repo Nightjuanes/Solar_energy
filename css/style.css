@@ -1,4 +1,5 @@
-/* Reset and Base Styles */
+/* --- Global and Base Styles --- */
+/* These rules reset and establish basic styles for the entire document. */
 * {
     margin: 0;
     padding: 0;
@@ -17,7 +18,8 @@ body {
     padding: 0 20px;
 }
 
-/* Navigation */
+/* --- Navigation (Navbar) --- */
+/* Styles for the top navigation bar. */
 .navbar {
     position: fixed;
     top: 0;
@@ -79,7 +81,8 @@ body {
     background: #276749;
 }
 
-/* Hero Section */
+/* --- Hero Section (Main) --- */
+/* Styles for the first visually prominent section of the page. */
 .hero {
     margin-top: 80px;
     background: url('/images/main.jpg');
@@ -117,7 +120,8 @@ body {
     margin-bottom: 2rem;
 }
 
-/* Buttons */
+/* --- General Buttons --- */
+/* Styles for different types of buttons. */
 .btn {
     padding: 0.8rem 1.5rem;
     border: none;
@@ -138,22 +142,24 @@ body {
 
 .btn.secondary {
     background: transparent;
-    border: 2px solid  #2f855a;
+    border: 2px solid #2f855a;
     color: #2f855a;
     align-items: center;
 }
-#viewAllProducts {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 2%;
-   
-}
+
 .btn.secondary:hover {
     background: white;
     color: #2f855a;
 }
 
-/* Featured Products */
+#viewAllProducts {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2%;
+}
+
+/* --- Featured Products --- */
+/* Styles for the section displaying main products. */
 .featured-products {
     padding: 4rem 0;
 }
@@ -204,26 +210,26 @@ body {
     margin-bottom: 1rem;
 }
 
-/* How It Works */
+/* --- How It Works Section --- */
+/* Styles to explain steps or a process. */
 .how-it-works {
     background: #f7fafc;
     padding: 4rem 0;
 }
 
 .floating-help {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background-color: #fff3cd;
-  color: #856404;
-  padding: 15px 20px;
-  border: 1px solid #ffeeba;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-  z-index: 9999;
-  font-size: 16px;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #fff3cd;
+    color: #856404;
+    padding: 15px 20px;
+    border: 1px solid #ffeeba;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    z-index: 9999;
+    font-size: 16px;
 }
-
 
 .steps-grid {
     display: grid;
@@ -243,7 +249,8 @@ body {
     margin-bottom: 1rem;
 }
 
-/* Benefits Section */
+/* --- Benefits Section --- */
+/* Styles to highlight advantages or benefits. */
 .benefits {
     padding: 4rem 0;
 }
@@ -269,7 +276,8 @@ body {
     margin-bottom: 1rem;
 }
 
-/* Testimonials */
+/* --- Testimonials --- */
+/* Styles for the client testimonials section. */
 .testimonials {
     background: #f7fafc;
     padding: 4rem 0;
@@ -307,7 +315,8 @@ body {
     margin-top: 1rem;
 }
 
-/* CTA Section */
+/* --- Call to Action (CTA) Section --- */
+/* Styles to prompt the user to take an action. */
 .cta {
     background: #2f855a;
     color: white;
@@ -325,7 +334,8 @@ body {
     gap: 1rem;
 }
 
-/* Footer */
+/* --- Footer --- */
+/* Styles for the website footer. */
 .footer {
     background: #1a202c;
     color: white;
@@ -396,14 +406,15 @@ body {
     color: #2f855a;
 }
 
-/* Responsive Design */
+/* --- Responsive Design (Media Queries) --- */
+/* Rules that adjust the layout for different screen sizes. */
 @media (max-width: 768px) {
     .nav-links {
-        display: none;
+        display: none; /* Hides navigation links on small screens */
     }
 
     .mobile-menu-btn {
-        display: block;
+        display: block; /* Shows a button for the mobile menu */
     }
 
     .hero h1 {
@@ -415,16 +426,16 @@ body {
     }
 
     .cta-buttons {
-        flex-direction: column;
+        flex-direction: column; /* Stacks CTA buttons vertically */
     }
 
     .footer-bottom {
-        flex-direction: column;
+        flex-direction: column; /* Stacks footer elements vertically */
         text-align: center;
         gap: 1rem;
     }
 }
-
+/* AI Assistant styles  */
 .ai-assistant-btn {
   position: fixed;
   bottom: 20px;
