@@ -22,17 +22,21 @@
         <main class="main-content">
             <div class="login-card">
                 <div class="tabs">
-                    <button class="tab active">Login</button>
-                    <button class="tab">Sign Up</button>
+                    <button type="button" class="tab active" id="loginTab">Login</button>
+                    <button type="button" class="tab" id="signupTab">Sign Up</button>
                 </div>
-                <div class="welcome-message">
+                <div class="welcome-message" id="loginWelcome">
                     <h2>Welcome Back!</h2>
                     <p>Log in to access your EcoPowerX dashboard</p>
                 </div>
-                <form class="login-form">
+                <div class="welcome-message" id="signupWelcome" style="display:none;">
+                    <h2>Create Your Account</h2>
+                    <p>Sign up to start your EcoPowerX journey</p>
+                </div>
+                <form class="login-form" id="loginForm">
                     <div class="form-group">
-                        <label for="email">Email Address</label>
-                        <input type="email" id="email" placeholder="Enter your email">
+                        <label for="login-identifier">Phone Number or Email Address</label>
+                        <input type="text" id="login-identifier" placeholder="Enter your phone number or email address">
                     </div>
                     <div class="form-group">
                         <label for="password">Password</label>
@@ -46,6 +50,21 @@
                     </div>
                     <button type="submit" class="btn login-btn">Log In</button>
                 </form>
+                <form class="login-form" id="signupForm" style="display:none;">
+                    <div class="form-group">
+                        <label for="signup-identifier">Phone Number or Email Address</label>
+                        <input type="text" id="signup-identifier" placeholder="Enter your phone number or email address">
+                    </div>
+                    <div class="form-group">
+                        <label for="signup-password">Password</label>
+                        <input type="password" id="signup-password" placeholder="Create a password">
+                    </div>
+                    <div class="form-group">
+                        <label for="signup-confirm-password">Confirm Password</label>
+                        <input type="password" id="signup-confirm-password" placeholder="Confirm your password">
+                    </div>
+                    <button type="submit" class="btn login-btn">Sign Up</button>
+                </form>
                 <div class="or-divider">Or continue with</div>
                 <div class="social-login">
                     <button class="social-btn google"><i class="fab fa-google"></i></button>
@@ -53,7 +72,7 @@
                     <button class="social-btn facebook"><i class="fab fa-facebook-f"></i></button>
                 </div>
                 <div class="signup-link">
-                    Don't have an account? <a href="#">Sign up</a>
+                    Don't have an account? <a href="#" id="signupLink">Sign up</a>
                 </div>
             </div>
         </main>
@@ -76,7 +95,5 @@
              <i class="fas fa-comment-dots"></i>
         </div>
     </footer>
-
-    <script src="js/login.js"></script>
 </body>
 </html> 
