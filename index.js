@@ -29,7 +29,7 @@ function sendMessage() {
   appendMessage("Tú", userText);
   aiInput.value = "";
 
-  fetch("https://api.pawan.krd/chat/completions", {
+  fetch("https://v2.jokeapi.dev/", {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
